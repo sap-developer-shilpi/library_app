@@ -6,11 +6,16 @@ class CategoriesController < ApplicationController
     @category = Category.new
   end
   def create
-    @category = Category.new(params[:category])    # Not the final implementation!
+    @category = Category.new(category_params)    # Not the final implementation!
     if @category.save
-      # Handle a successful save.
+      #render 'show'
     else
       render 'new'
     end
+  end
+  private
+
+  def category_params
+    params.require(:category).permit(:name )
   end
 end
