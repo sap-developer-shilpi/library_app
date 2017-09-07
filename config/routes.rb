@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'books/new'
+
   get 'categories/new'
   get 'categories/show'
   post 'categories/create'
@@ -12,6 +14,8 @@ Rails.application.routes.draw do
   get 'static_pages/contact'
 
   get 'static_pages/home'
+
   resources :categories
+  resources :books
    # root 'application#hello' # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
